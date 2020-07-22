@@ -1,0 +1,368 @@
+body {
+    background-image: linear-gradient(180deg, #08f, #fff);
+    height: 900px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.game-over{
+    background-image: url('https://www.zerohedge.com/s3/files/inline-images/Game-over-2.png?itok=5gPtyVvl');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: none;
+}
+
+.yellow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter {
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.road {
+    height: 150px;
+    width: 500%;
+    display: block;
+    position: absolute;
+    background-image: url('../img/road.jpg');
+    background-repeat: repeat-x;
+    bottom: 0;
+    /* animation: 6s road linear infinite; */
+}
+
+@keyframes road{
+    0%{
+        transform: translate(0px, 0);
+    }
+    100%{
+        transform: translate(-1500px, 0);
+    }
+}
+
+
+.city{
+    background-image: url('../img/mountains.png');
+    height: 350px;
+    width: 500%;
+    background-repeat: repeat-x;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 150px;
+    /* animation: 6s city linear infinite; */
+    z-index: -2;
+}
+
+.clouds{
+    background-image: url('../img/clouds.png');
+    height: 350px;
+    width: 500%;
+    background-repeat: repeat-x;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 150px;
+    animation: 50s clouds linear infinite;
+    z-index: -2;
+}
+
+
+@keyframes city{
+    0%{
+        transform: translate(0px, 0);
+    }
+    100%{
+        transform: translate(-700px, 0);
+    }
+}
+
+@keyframes clouds{
+    0%{
+        transform: translate(0px, 0);
+    }
+    100%{
+        transform: translate(-700px, 0);
+    }
+}
+
+
+.traffic-light {
+    top: 40px;
+    position: relative;
+    left: 100px;
+    width: 170px;
+    height: 400px;
+    background: #222;
+    border-radius: 20px;
+    border: solid 5px #333;
+}
+
+.traffic-light::before{
+    background: #222;
+    content: "";
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    top: -20px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.traffic-light::after {
+    background-image: linear-gradient(90deg, #777, #ccc, #000);
+    content: "";
+    width: 50px;
+    height: 700px;
+    position: absolute;
+    top: 150px;
+    z-index: -1;
+    left: 60px;
+}
+
+.protector {
+    width: 180px;
+    height: 0px;
+    top: 20px;
+    left: -35px;
+    background: transparent;
+    position: absolute;
+    border-top: solid 90px #111;
+    border-left: solid 30px transparent;
+    border-right: solid 30px transparent;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.protector:nth-child(2){
+    top: 140px;
+}
+
+.protector:nth-child(3){
+    top: 260px;
+}
+
+.red {
+    background: red;
+    background-image: radial-gradient(brown, transparent);
+    background-size: 5px 5px;
+    border: dotted 2px red;
+    width: 100px;
+    height: 100px;
+    top: 20px;
+    left: 35px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px #111 inset, 0 0 10px red;
+    opacity: .3;
+    transition: opacity 0.5s;
+    /* animation: 6s redAnim infinite; */
+}
+
+.yellow {
+    background: yellow;
+    background-image: radial-gradient(orange, transparent);
+    background-size: 5px 5px;
+    border: dotted 2px yellow;
+    width: 100px;
+    height: 100px;
+    top: 145px;
+    left: 35px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px #111 inset, 0 0 10px yellow;
+    /* opacity: .3; */
+    transition: opacity 0.5s;
+    /* animation: 6s yellowAnim infinite; */
+}
+
+.green {
+    background: green;
+    background-image: radial-gradient(lime, transparent);
+    background-size: 5px 5px;
+    border: dotted 2px lime;
+    width: 100px;
+    height: 100px;
+    top: 270px;
+    left: 35px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px #111 inset, 0 0 10px green;
+    opacity: .3;
+    transition: opacity 0.5s;
+
+    /* animation: 6s greenAnim infinite; */
+}
+
+/* .red:hover, .green:hover, .yellow:hover{
+    opacity: 1;
+} */
+
+@keyframes redAnim {
+    0% {
+        opacity: 1;
+    }
+    20%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 0.3;
+    }
+
+    100%{
+
+    }
+}
+
+@keyframes yellowAnim {
+    0% {
+        opacity: 0.3;
+    }
+    20%{
+        opacity: 0.3;
+    }
+    30%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0.3;
+    }
+}
+
+@keyframes greenAnim {
+    0% {
+        opacity: 0.3;
+    }
+    20%{
+        opacity: 0.3;
+    }
+    30%{
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    60%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.titles {
+    position: absolute;
+    left: 400px;
+    top: 100px;
+}
+.titles *{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-shadow: 5px 5px 5px #111;
+}
+
+.titles h1{
+    font-size: 180px;
+    animation: 5s wiggle infinite;
+}
+
+.titles h2{
+    font-size: 160px;
+    animation: 5s wiggle infinite;
+    animation-delay: 2s;
+}
+
+
+@keyframes wiggle {
+    0% {
+        transform: translate(0, 0) (1);
+    }
+    50% {
+        transform: translate(0, 10px) scale(1.03);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.car{
+    position: absolute;
+    width: 800px;
+    left: 30%;
+    bottom: 100px;
+    /* animation: 1s car infinite; */
+}
+
+@keyframes car{
+    0% {
+        transform: translate(0, -2px);
+    }
+    50% {
+        transform: translate(0, 2px);
+    }
+    100% {
+        transform: translate(0, -2px);
+    }
+}
+
+.wheels {
+    position: absolute;
+    left: 30%;
+    bottom: 100px;
+}
+
+@keyframes wheels {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.wheels img{
+    width: 125px;
+    height: 125px;
+    /* animation: 1s wheels linear infinite; */
+}
+
+.wheels .front {
+    position: relative;
+    bottom: -23px;
+    left: 406px;
+}
+
+.wheels .back {
+    position: relative;
+    bottom: -23px;
+    left: -34px;
+}

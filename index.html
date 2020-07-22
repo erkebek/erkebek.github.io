@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div id="gameOver" class="game-over">
+            <button id="tryAgainBtn">Try Again</button>
+        </div>
+        <div id="road" class="road"></div>
+        <div id="city" class="city"></div>
+        <div class="clouds"></div>
+        <div class="traffic-light">
+            <div class="protector"></div>
+            <div class="protector"></div>
+            <div class="protector"></div>
+            <div class="red">
+                <span class="counter" id="counterRed"></span>
+            </div>
+            <div class="yellow">
+                <span class="counter" id="counterYellow"></span>
+            </div>
+            <div class="green">
+                <span class="counter" id="counterGreen"></span>
+            </div>
+        </div>
+
+        <div id="car" class="car">
+            <img src="img/car.png" alt="">
+        </div>
+        <div class="wheels">
+            <img id="frontWheel" class="front" src="img/wheel.png" alt="">
+            <img id="backWheel" class="back" src="img/wheel.png" alt="">
+        </div>
+
+        <div class="titles">
+            <h1>Traffic Light</h1>
+            <h2>by Erkebek</h2>
+            <!-- <button id="changeColorBtn">Change color</button> -->
+        </div>
+    </div>
+
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
